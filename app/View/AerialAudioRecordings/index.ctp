@@ -168,8 +168,12 @@ function showLoading(){
     <?php foreach ($items as $item): ?>
     <tr>        
         <td style="vertical-align:middle;text-align:center;font-weight:bold; text-decoration:underline;"><span style="cursor:pointer;" onclick="stopAndPlay('<?=$item['AerialAudioRecording']['path'];?>','<?=$item['AerialAudioRecording']['extension'];?>','<?=$item['AerialAudioRecording']['n_item'];?>');"><?php echo $item['AerialAudioRecording']['n_item']; ?></span></td>
-        <td style="vertical-align:middle;text-align:center;font-style:italic;"><?php echo $item['AerialAudioRecording']['d_item']; ?></td>      
-        <td style="vertical-align:middle;text-align:center;"><?php echo $item['AerialAudioRecording']['f_creacion']; ?></td>
+        <td style="vertical-align:middle;text-align:center;font-style:italic;"><?php echo $item['AerialAudioRecording']['d_item']; ?></td>   
+        <?php
+        $phpdate = strtotime($item['AerialAudioRecording']['f_creacion']);
+        $mysqldate = date('d/m/Y', $phpdate); 
+        ?>
+        <td style="vertical-align:middle;text-align:center;"><?php echo $mysqldate; ?></td>
     </tr>
     <?php endforeach; ?>    
     <?php unset($items); ?>
