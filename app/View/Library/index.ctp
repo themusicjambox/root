@@ -22,7 +22,7 @@ function submit_form(){
 
 </script>
 
-<form action="/Library" id="form_library" name="form_library" method="post" accept-charset="utf-8">
+<form action="./Library" id="form_library" name="form_library" method="post" accept-charset="utf-8">
 <table width="30%" style="margin: 0px auto;">
     <tbody>
         <tr>   
