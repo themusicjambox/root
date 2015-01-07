@@ -20,13 +20,15 @@ function cargarSubcategorias(){
     });
 }
 
-function stopAndPlay(path, ext, name){
+function stopAndPlay(path, ext, name, descr){
     goToNowPlaying();
     showLoading();
     var ap = $('#audio_player');
     ap.attr("src", path);
     var tit = $('#play_title');
     tit.text(name);
+    var desc = $('#play_desc');
+    desc.text(descr);
 }
 
 function playMusic(){
@@ -63,7 +65,8 @@ function showLoading(){
 
         
 <img style="display:none;" height="80px" width="80px" src="./img/loading18.gif"  id="loading_gif" name="loading_gif">        
-<h5 style="text-decoration: underline;" id="play_title" name="play_title">No audio selected.</h5>
+<h5 style="text-decoration: underline;" id="play_title" name="play_title">No audio selected</h5>
+<p style="font-style: italic" id="play_desc" name="play_desc">Select a track from the list</p>
 
 <!-- Audio Player -->
 <audio id="audio_player" name="audio_player" oncanplaythrough="playMusic();" controls>  
@@ -167,7 +170,7 @@ function showLoading(){
     </tr>        
     <?php foreach ($items as $item): ?>
     <tr>        
-        <td style="vertical-align:middle;text-align:center;font-weight:bold; text-decoration:underline;"><span style="cursor:pointer;" onclick="stopAndPlay('<?=$item['AerialAudioRecording']['path'];?>','<?=$item['AerialAudioRecording']['extension'];?>','<?=$item['AerialAudioRecording']['n_item'];?>');"><?php echo $item['AerialAudioRecording']['n_item']; ?></span></td>
+        <td style="vertical-align:middle;text-align:center;font-weight:bold; text-decoration:underline;"><span style="cursor:pointer;" onclick="stopAndPlay('<?=$item['AerialAudioRecording']['path'];?>','<?=$item['AerialAudioRecording']['extension'];?>','<?=$item['AerialAudioRecording']['n_item'];?>','<?=$item['AerialAudioRecording']['d_item'];?>');"><?php echo $item['AerialAudioRecording']['n_item']; ?></span></td>
         <td style="vertical-align:middle;text-align:center;font-style:italic;"><?php echo $item['AerialAudioRecording']['d_item']; ?></td>   
         <?php
         $phpdate = strtotime($item['AerialAudioRecording']['f_creacion']);
