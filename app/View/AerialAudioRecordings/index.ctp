@@ -67,7 +67,7 @@ function showLoading(){
 <img style="display:none;" height="80px" width="80px" src="./img/loading18.gif"  id="loading_gif" name="loading_gif">        
 <h5 style="text-decoration: underline;" id="play_title" name="play_title">No audio selected</h5>
 <p style="font-style: italic" id="play_desc" name="play_desc">Select a track from the list</p>
-
+<br>
 <!-- Audio Player -->
 <audio id="audio_player" name="audio_player" oncanplaythrough="playMusic();" controls>  
     <source src="files/aerial_audio_recordings/none.mp3" type="audio/mpeg">
