@@ -31,7 +31,7 @@ class AerialAudioRecordingsController extends AppController {
             $conditions['MONTH(AerialAudioRecording.f_creacion) IN'] = $meses;     
         }
 
-	$conditions['AerialAudioRecording.habilitado'] = 'S'; 
+	    $conditions['AerialAudioRecording.habilitado'] = 'S'; // Para que me traiga solo los que estan habilitados desde BD
 
         $items = $this->AerialAudioRecording->find('all', array('conditions' => $conditions, 'order' => array('AerialAudioRecording.f_creacion DESC')));
 
@@ -40,6 +40,9 @@ class AerialAudioRecordingsController extends AppController {
         }
 
         $this->set('items', $items);
+
+        $regs = $this->AerialAudioRecording->find('count', array('conditions' => array('AerialAudioRecording.habilitado' => 'S')));
+        $this->set('max_reg', $regs);
         
     }
 

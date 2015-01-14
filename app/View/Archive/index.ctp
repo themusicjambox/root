@@ -43,15 +43,14 @@ $('#archive').addClass('active');
                         echo strtoupper($reg['Archive']['n_jam']);
                         echo "</span>";
                         echo "<br>";
-                        $phpdate = strtotime($reg['Archive']['f_creacion']);
-                        $mysqldate = date('d/m/Y', $phpdate);
-                        echo $mysqldate;
-                        echo "<br>";
                         echo "<span style='font-style:italic;'>";
                         echo $reg['Archive']['d_jam'];
-                        echo "</span>";
+                        echo "</span>";                        
+                        echo "<br>";
+                        $phpdate = strtotime($reg['Archive']['f_creacion']);
+                        $mysqldate = date('d/m/Y', $phpdate);
+                        echo $mysqldate;                        
                         echo "</td>";
-
                     }
                     echo "</tr>";
                 }
@@ -68,13 +67,13 @@ $('#archive').addClass('active');
                     echo strtoupper($reg['Archive']['n_jam']);
                     echo "</span>";
                     echo "<br>";
-                    $phpdate = strtotime($reg['Archive']['f_creacion']);
-                    $mysqldate = date('d/m/Y', $phpdate);
-                    echo $mysqldate;
-                    echo "<br>";
                     echo "<span style='font-style:italic;'>";
                     echo $reg['Archive']['d_jam'];
-                    echo "</span>";
+                    echo "</span>";                    
+                    echo "<br>";
+                    $phpdate = strtotime($reg['Archive']['f_creacion']);
+                    $mysqldate = date('d/m/Y', $phpdate);
+                    echo $mysqldate;                    
                     echo "</td>";
                 }
                 echo "</tr>";

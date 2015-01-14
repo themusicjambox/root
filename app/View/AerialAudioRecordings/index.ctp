@@ -50,6 +50,14 @@ function hideLoading(){
 function showLoading(){
     $('#loading_gif').show();
 }
+function random_track(){
+    var MyJSNumVar = <?php echo $max_reg; ?>;
+    MyJSNumVar = parseInt(MyJSNumVar);
+    var rnd = Math.floor((Math.random() * MyJSNumVar) + 1); 
+    var sp_selected = "sp_"+rnd;
+    document.getElementById(sp_selected).click();
+}
+
 </script>
 
 <script>
@@ -157,9 +165,20 @@ function showLoading(){
         </tbody>
     </table>
     <br>
+<table width="20%" border="0" style="margin: 0px auto;">
+    <tr>  
+        <td> 
+          
 <?php echo $this->Form->submit('♫ ♪ ♫ ♪'); ?>    
-<?php echo $this->Form->end(); ?>    
 
+</td>
+<td> 
+<button type="button" onclick="random_track();">Random</button>
+</td> 
+</tr>  
+</table>
+<?php echo $this->Form->end(); ?> 
+<br>
 <!-- Buscador -->
 
 <table class="table table-striped" width="100%" style="margin: 0px auto;">
@@ -167,10 +186,12 @@ function showLoading(){
         <th><p style="text-align:center;">Nombre</p></th>
         <th><p style="text-align:center;">Descripción</p></th>      
         <th><p style="text-align:center;">Fecha</p></th>
-    </tr>        
+    </tr>
+    <?php $L = 0; ?>      
     <?php foreach ($items as $item): ?>
+    <?php $L++; ?>
     <tr>        
-        <td style="vertical-align:middle;text-align:center;font-weight:bold; text-decoration:underline;"><span style="cursor:pointer;" onclick="stopAndPlay('<?=$item['AerialAudioRecording']['path'];?>','<?=$item['AerialAudioRecording']['extension'];?>','<?=$item['AerialAudioRecording']['n_item'];?>','<?=$item['AerialAudioRecording']['d_item'];?>');"><?php echo $item['AerialAudioRecording']['n_item']; ?></span></td>
+        <td style="vertical-align:middle;text-align:center;font-weight:bold; text-decoration:underline;"><span id="sp_<?=$L?>" style="cursor:pointer;" onclick="stopAndPlay('<?=$item['AerialAudioRecording']['path'];?>','<?=$item['AerialAudioRecording']['extension'];?>','<?=$item['AerialAudioRecording']['n_item'];?>','<?=$item['AerialAudioRecording']['d_item'];?>');"><?php echo $item['AerialAudioRecording']['n_item']; ?></span></td>
         <td style="vertical-align:middle;text-align:center;font-style:italic;"><?php echo $item['AerialAudioRecording']['d_item']; ?></td>   
         <?php
         $phpdate = strtotime($item['AerialAudioRecording']['f_creacion']);
