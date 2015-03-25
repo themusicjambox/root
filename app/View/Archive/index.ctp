@@ -16,7 +16,7 @@ $('#archive').addClass('active');
   ga('send', 'pageview');
 
 </script>
-<table width="90%" style="margin: 0px auto;" border="0">
+<table width="80%" style="margin: 0px auto;" border="3">
     <tbody> <?php $j = 0;
                   $k = 0;?>   	
             <?php foreach ($jams as $jam): ?>

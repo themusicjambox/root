@@ -24,6 +24,7 @@
         <div style="float: right;">
         <a style="display:none;" href="http://www.facebook.com/TheMusicJamBox" target="_blank"><?php echo $this->Html->image('logos/facebook_square-128.png', array('alt' => 'fb_logo', 'width' => '32', 'height' => '32')); ?></a>
         <a style="display:none;" href="http://www.twitter.com/TheMusicJamBox" target="_blank"><?php echo $this->Html->image('logos/twitter_square-128.png', array('alt' => 'tw_logo', 'width' => '32', 'height' => '32')); ?></a>
+        <a style="display:none;" href="http://www.instagram.com/TheMusicJamBox" target="_blank"><?php echo $this->Html->image('logos/twitter_square-128.png', array('alt' => 'tw_logo', 'width' => '32', 'height' => '32')); ?></a>
         </div> 
         <a href="http://www.TheMusicJamBox.com">
         <img id="main_logo_img" src="img/labels/themusicjambox.png" style="display: block; margin-left: auto; margin-right: auto;">
